@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Listings | HomeLink Rentals</title>
+
+    <link rel="stylesheet" href="./css/listing.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- top navigation bar -->
+    <div class="navbar">
+      <div class="logo-section">
+        <img alt="HomeLink logo" src="./images/icons/logo.png" />
+        <p class="brand-text">
+          <span class="brand-main">HomeLink</span><br />
+          <span class="brand-sub">Rentals</span>
+        </p>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="listing.html"><i class="fas fa-list"></i> Listing</a>
+        <a href="dashboard-renter.html"
+          ><i class="fas fa-sign-in-alt"></i> Login</a
+        >
+        <a href="dashboard-owner.html"
+          ><i class="fas fa-plus-circle"></i>Post home</a
+        >
+      </div>
+
+      <div class="menu-icon" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+
+    <!-- mobile sidebar menu -->
+    <nav class="sidebar" id="sidebarMenu">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="listing.html"><i class="fas fa-list"></i> Listing</a>
+      <a href="dashboard-renter.html"
+        ><i class="fas fa-sign-in-alt"></i> Login</a
+      >
+      <button><i class="fas fa-plus-circle"></i> Post home</button>
+    </nav>
+
+    <!-- login/register modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <!-- login form -->
+        <div id="login-form-section">
+          <h3><i class="fas fa-user-circle"></i> Login to HomeLink</h3>
+          <form id="loginForm">
+            <label for="login-username">Username or Email</label>
+            <input type="text" id="login-username" name="username" required />
+
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              required
+            />
+
+            <button type="submit" class="primary-btn">Log In</button>
+          </form>
+
+          <p class="switch-link">
+            Don't have an account?
+            <a href="#" id="showRegister">Create a new account now</a>
+          </p>
+        </div>
+
+        <!-- register form -->
+        <div id="register-form-section">
+          <h3><i class="fas fa-user-plus"></i> Create New Account</h3>
+          <form id="registerForm">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" name="email" required />
+
+            <label for="register-username">Username</label>
+            <input
+              type="text"
+              id="register-username"
+              name="username"
+              required
+            />
+
+            <label for="register-password">Password</label>
+            <input
+              type="password"
+              id="register-password"
+              name="password"
+              required
+            />
+
+            <p class="note">A verification link will be sent to your email.</p>
+
+            <button type="submit" class="primary-btn">Sign Up</button>
+          </form>
+
+          <p class="switch-link">
+            Already have an account? <a href="#" id="showLogin">Log In</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container listing-page">
+      <h1>Property Listings</h1>
+
+      <div class="listing-main-content">
+        <!-- filter sidebar -->
+        <aside class="listing-sidebar">
+          <h3><i class="fas fa-filter"></i> Filter Listings</h3>
+          <form class="filter-form">
+            <div class="filter-group">
+              <label for="location">Location:</label>
+              <input
+                type="text"
+                id="location"
+                placeholder="e.g., Bole, Sarbet"
+              />
+            </div>
+
+            <div class="filter-group">
+              <label for="price-range">Price Range (ETB):</label>
+              <select id="price-range">
+                <option value="">Any</option>
+                <option value="below-5000">Below 5,000 ETB</option>
+                <option value="5000-10000">5,000 – 10,000 ETB</option>
+                <option value="10000-20000">10,000 – 20,000 ETB</option>
+                <option value="20000-40000">20,000 – 40,000 ETB</option>
+                <option value="40000-plus">40,000+ ETB</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="property-type">Property Type:</label>
+              <select id="property-type">
+                <option value="">Any</option>
+                <option value="apartment">Apartment</option>
+                <option value="condominium">Condominium</option>
+                <option value="villa">Villa</option>
+                <option value="single-room">Single Room</option>
+                <option value="shared-room">Shared Room</option>
+                <option value="office-space">Office Space</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-apply">
+              <i class="fas fa-search"></i> Apply Filters
+            </button>
+            <button type="reset" class="btn btn-logout btn-clear">
+              Clear Filters
+            </button>
+          </form>
+        </aside>
+
+        <!-- listing cards -->
+        <main class="listing-results">
+          <h2>Showing 7 Results</h2>
+
+          <div class="list-grid">
+            <!-- card 1 -->
+            <div class="post-card listing-card">
+              <img
+                alt="house_for_rent"
+                src="./images/listings/house_for_rent6.jpg"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>3 Bed Modern Villa</h3>
+                <p class="listing-price"><strong>25,000 ETB</strong> / month</p>
+                <p class="listing-location">Bole</p>
+                <div class="listing-features">
+                  <span>3 Beds</span>
+                  <span>2 Baths</span>
+                </div>
+                <a href="#" class="btn btn-accent btn-view-details"
+                  >View Details</a
+                >
+              </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="post-card listing-card">
+              <img
+                alt="house_for_rent"
+                src="./images/listings/house_for_rent5.jpg"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>5 Bed Luxury Villa</h3>
+                <p class="listing-price"><strong>65,000 ETB</strong> / month</p>
+                <p class="listing-location">Sarbet</p>
+                <div class="listing-features">
+                  <span>5 Beds</span>
+                  <span>4 Baths</span>
+                </div>
+                <a href="#" class="btn btn-accent btn-view-details"
+                  >View Details</a
+                >
+              </div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="post-card listing-card">
+              <img
+                alt="house_for_rent"
+                src="./images/listings/house_for_rent4.jpg"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>2 Bed Villa</h3>
+                <p class="listing-price"><strong>12,000 ETB</strong> / month</p>
+                <p class="listing-location">Megenagna</p>
+                <div class="listing-features">
+                  <span>1 Bed</span>
+                  <span>1 Bath</span>
+                </div>
+                <a href="#" class="btn btn-accent btn-view-details"
+                  >View Details</a
+                >
+              </div>
+            </div>
+
+            <!-- card 4 -->
+            <div class="post-card listing-card">
+              <img
+                alt="house_for_rent"
+                src="./images/listings/house_for_rent3.jpg"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>Single Room</h3>
+                <p class="listing-price"><strong>4,500 ETB</strong> / month</p>
+                <p class="listing-location">Lebu</p>
+                <div class="listing-features">
+                  <span>1 Bed</span>
+                  <span>Shared Bath</span>
+                </div>
+                <a href="#" class="btn btn-accent btn-view-details"
+                  >View Details</a
+                >
+              </div>
+            </div>
+
+            <!-- card 5 -->
+            <div class="post-card listing-card">
+              <img
+                alt="house_for_rent"
+                src="./images/listings/house_for_rent.jpg"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>3 Bed Condominium</h3>
+                <p class="listing-price"><strong>40,000 ETB</strong> / month</p>
+                <p class="listing-location">Bole Olympia</p>
+                <div class="listing-features">
+                  <span>80 sqm</span>
+                  <span>Shared Kitchen</span>
+                </div>
+                <a href="#" class="btn btn-accent btn-view-details"
+                  >View Details</a
+                >
+              </div>
+            </div>
+
+            <!-- card 6 -->
+            <div class="post-card listing-card">
+              <img
+                alt="house_for_rent"
+                src="./images/listings/house_for_rent1.jpg"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>4 Bed Apartment</h3>
+                <p class="listing-price"><strong>50,000 ETB</strong> / month</p>
+                <p class="listing-location">Ayat</p>
+                <div class="listing-features">
+                  <span>4 Beds</span>
+                  <span>3 Baths</span>
+                </div>
+                <a href="#" class="btn btn-accent btn-view-details"
+                  >View Details</a
+                >
+              </div>
+            </div>
+
+            <!-- card 7 -->
+            <div class="post-card listing-card">
+              <img
+                alt="house_for_rent"
+                src="./images/listings/house_for_rent2.jpg"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>Modern 3 Bed Villa</h3>
+                <p class="listing-price"><strong>80,000 ETB</strong> / month</p>
+                <p class="listing-location">Mexico</p>
+                <div class="listing-features">
+                  <span>Studio</span>
+                  <span>1 Bath</span>
+                </div>
+                <a href="#" class="btn btn-accent btn-view-details"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-home"></i> HomeLink Rentals</h3>
+          <p>Copyright 2024 HomeLink Rentals. All rights reserved.</p>
+          <div class="anchors">
+            <p>
+              <strong><a href="about.html">About Us</a></strong>
+            </p>
+            <p>
+              <strong><a href="contact.html">Contact Us</a></strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- sidebar toggle script -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebarMenu");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

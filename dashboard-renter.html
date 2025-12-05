@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account - HomeLink Rentals</title>
+
+    <link rel="stylesheet" href="./css/renter-dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- top navigation -->
+    <div class="navbar">
+      <div class="logo-section">
+        <img alt="HomeLink logo" src="./images/icons/logo.png" />
+        <p class="brand-text">
+          <span class="brand-main">HomeLink</span><br />
+          <span class="brand-sub">Rentals</span>
+        </p>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="listing.html"><i class="fas fa-list"></i> Listing</a>
+        <a href="dashboard-owner.html"
+          ><i class="fas fa-plus-circle"></i> Post Home</a
+        >
+        <a href="dashboard-renter.html" class="active-link"
+          ><i class="fas fa-user-circle"></i> My Account</a
+        >
+        <button class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </div>
+
+    <main class="dashboard-content">
+      <h1>My Dashboard</h1>
+
+      <!-- quick stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="fas fa-heart"></i>
+          <p class="stat-number">15</p>
+          <p class="stat-label">Saved Listings</p>
+        </div>
+
+        <div class="stat-card">
+          <i class="fas fa-file-alt"></i>
+          <p class="stat-number">3</p>
+          <p class="stat-label">Active Applications</p>
+        </div>
+
+        <div class="stat-card">
+          <i class="fas fa-bell"></i>
+          <p class="stat-number">4</p>
+          <p class="stat-label">New Matches</p>
+        </div>
+
+        <div class="stat-card">
+          <i class="fas fa-eye"></i>
+          <p class="stat-number">7</p>
+          <p class="stat-label">Recently Viewed</p>
+        </div>
+      </div>
+
+      <!-- saved listings -->
+      <section class="dashboard-section">
+        <h2><i class="fas fa-bookmark icon-dark"></i> Your Saved Listings</h2>
+        <div class="card-list">
+          <div class="listing-preview">
+            <img
+              src="./images/listings/house_for_rent2.jpg"
+              alt="Apartment view"
+            />
+            <div class="listing-details">
+              <h3>2 Bed Apartment in Bole</h3>
+              <p>📍 Bole, Addis Ababa | 💰 12,000 ETB/month</p>
+              <button class="btn-primary">View Details</button>
+            </div>
+          </div>
+
+          <div class="listing-preview">
+            <img
+              src="./images/listings/house_for_rent3.jpg"
+              alt="Condominium view"
+            />
+            <div class="listing-details">
+              <h3>Modern Condo in Kazanchis</h3>
+              <p>📍 Kazanchis, Addis Ababa | 💰 8,500 ETB/month</p>
+              <button class="btn-primary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- application statuses -->
+      <section class="dashboard-section">
+        <h2>
+          <i class="fas fa-clipboard-list icon-dark"></i> Application Status
+        </h2>
+
+        <div class="application-list">
+          <div class="application-item status-pending">
+            <div>
+              <p><strong>Villa near Africa Avenue</strong></p>
+              <p class="application-date">Applied: 2 days ago</p>
+            </div>
+            <span class="status-badge">Pending Review</span>
+          </div>
+
+          <div class="application-item status-approved">
+            <div>
+              <p><strong>Single Room, Kazanchis</strong></p>
+              <p class="application-date">Applied: 1 week ago</p>
+            </div>
+            <span class="status-badge">Approved!</span>
+          </div>
+
+          <div class="application-item status-viewed">
+            <div>
+              <p><strong>Shared Apartment, Bole</strong></p>
+              <p class="application-date">Applied: 3 days ago</p>
+            </div>
+            <span class="status-badge">Viewed by Owner</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- recently viewed -->
+      <section class="dashboard-section">
+        <h2><i class="fas fa-history icon-dark"></i> Recently Viewed</h2>
+        <div class="card-list">
+          <div class="listing-preview">
+            <img src="./images/listings/house_for_rent5.jpg" alt="Villa view" />
+            <div class="listing-details">
+              <h3>Spacious Villa in Old Airport</h3>
+              <p>📍 Old Airport, Addis Ababa | 💰 25,000 ETB/month</p>
+              <button class="btn-primary">View Again</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-home"></i> HomeLink Rentals</h3>
+          <p>
+            Copyright <i class="far fa-copyright"></i> 2025 HomeLink Rentals.
+            All rights reserved
+          </p>
+          <div class="anchors">
+            <p>
+              <strong><a href="about.html">About Us</a></strong>
+            </p>
+            <p>
+              <strong><a href="contact.html">Contact Us</a></strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- logout script -->
+    <script>
+      document
+        .querySelector(".logout-btn")
+        .addEventListener("click", function () {
+          if (confirm("Are you sure you want to log out?")) {
+            window.location.href = "index.html";
+          }
+        });
+    </script>
+  </body>
+</html>

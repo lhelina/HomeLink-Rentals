@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="./css/about.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <div class="navbar">
+      <div class="logo-section">
+        <img alt="HomeLink logo" src="./images/icons/logo.png" />
+        <p class="brand-text">
+          <span class="brand-main">HomeLink</span><br />
+          <span class="brand-sub">Rentals</span>
+        </p>
+      </div>
+
+      <div class="menu-icon" id="menuBtn">☰</div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="listing.html">Listing</a>
+        <a href="about.html" class="active-link">About</a>
+        <a href="./dashboard-renter.html">Login</a>
+        <a href="./dashboard-owner.html" class="posthome-btn">Post Home</a>
+      </div>
+
+      <!-- sidebar mobile menu -->
+      <nav class="sidebar" id="sidebarMenu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="listing.html"><i class="fas fa-list"></i> Listing</a>
+        <a href="./dashboard-renter.html"
+          ><i class="fas fa-sign-in-alt"></i> Login</a
+        >
+        <a href="./dashboard-owner.html" class="posthome-btn"
+          ><i class="fas fa-plus-circle"></i> Post Home</a
+        >
+      </nav>
+    </div>
+
+    <!-- about section -->
+    <section class="about">
+      <h2>About Us</h2>
+      <p>
+        HomeLink Rentals is a small online platform that connects homeowners and
+        renters in Ethiopia without intermediaries. Owners can post available
+        properties of all sizes, and renters can browse listings, search
+        options, and contact owners directly.
+      </p>
+    </section>
+
+    <!-- complaint form -->
+    <section class="complaint-section">
+      <h3>Submit a Complaint</h3>
+      <form>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Enter your name"
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="example@email.com"
+        />
+
+        <label for="message">Complaint</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          placeholder="Describe your issue..."
+        ></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-home"></i> HomeLink Rentals</h3>
+          <p>Copyright © 2025 HomeLink Rentals. All rights reserved.</p>
+          <div class="anchors">
+            <p>
+              <strong><a href="about.html">About Us</a></strong>
+            </p>
+            <p>
+              <strong><a href="contact.html">Contact Us</a></strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- sidebar script -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebarMenu");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+          sidebar.classList.remove("open");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Dashboard | HomeLink Rentals</title>
+    <link rel="stylesheet" href="css/owner-dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- navbar section -->
+    <div class="nav-bar">
+      <div class="logo-section">
+        <img src="./images/icons/logo.png" alt="logo" class="logo-img" />
+        <span class="brand-main">HomeLink</span>
+        <span class="brand-sub">Owner Dashboard</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">
+          <i class="fas fa-home"></i> Home
+        </a>
+
+        <a href="./dashboard-owner.html" class="nav-link">
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+
+        <a href="./listing.html" class="nav-link">
+          <i class="fas fa-list-alt"></i> Listings
+        </a>
+
+        <a href="#" class="nav-link">
+          <i class="fas fa-envelope"></i> Messages
+        </a>
+
+        <a href="./index.html" class="btn btn-logout">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Dashboard Overview</h1>
+
+      <!-- stats overview -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="fas fa-home stat-icon"></i>
+          <div class="stat-info">
+            <strong>4</strong>
+            <p>Total Listings</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <i class="fas fa-phone-alt stat-icon"></i>
+          <div class="stat-info">
+            <strong>10</strong>
+            <p>New Inquiries</p>
+          </div>
+        </div>
+
+        <div class="stat-card stat-accent">
+          <i class="fas fa-check-circle stat-icon"></i>
+          <div class="stat-info">
+            <strong>2</strong>
+            <p>Active Rentals</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- form to post new property -->
+      <div class="post-form-section">
+        <h2>Post a New Property</h2>
+
+        <form class="post-grid">
+          <div class="upload-box">
+            <p>Upload Property Photos (up to 5MB)</p>
+            <button class="btn btn-primary" type="button">
+              <i class="fas fa-camera"></i> Open Camera
+            </button>
+            <p>— OR —</p>
+            <input type="file" accept="image/*" multiple />
+          </div>
+
+          <div class="input-group input-labeled">
+            <label for="type" class="input-label">Type</label>
+            <select id="type" name="type" required>
+              <option value="" disabled selected>Property Type</option>
+              <option value="apartment">Apartment</option>
+              <option value="condominium">Condominium</option>
+              <option value="villa">Villa</option>
+              <option value="single-room">Single Room</option>
+              <option value="shared-room">Shared Room</option>
+              <option value="office-space">Office Space</option>
+            </select>
+          </div>
+
+          <div class="input-group input-labeled">
+            <label for="price" class="input-label">Price Range</label>
+            <select id="price" name="price" required>
+              <option value="" disabled selected>Target Price Range</option>
+              <option value="below-5000">Below 5,000 ETB</option>
+              <option value="5000-10000">5,000 – 10,000 ETB</option>
+              <option value="10000-20000">10,000 – 20,000 ETB</option>
+              <option value="20000-40000">20,000 – 40,000 ETB</option>
+              <option value="40000-plus">40,000+ ETB</option>
+            </select>
+          </div>
+
+          <button
+            class="btn btn-accent btn-post btn-post-compact"
+            type="submit"
+          >
+            <i class="fas fa-paper-plane"></i> Post
+          </button>
+        </form>
+      </div>
+
+      <!-- active listings section -->
+      <h2 class="section-title">Your Active Listings (3)</h2>
+
+      <div class="list-grid">
+        <!-- card 1 -->
+        <div class="post-card">
+          <img
+            src="./images/listings/house_for_rent1.jpg"
+            alt="property image"
+            class="card-img"
+          />
+          <div class="card-body">
+            <h3>2 Bed Condominium</h3>
+            <div class="card-details">
+              <p class="detail-item">
+                <i class="fas fa-map-marker-alt"></i> Bole
+              </p>
+              <p class="detail-item">
+                <i class="fas fa-money-bill-wave"></i> 20,000 ETB
+              </p>
+              <p class="detail-item status status-avail">
+                <i class="fas fa-info-circle"></i> Available
+              </p>
+              <button class="btn btn-edit">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- card 2 -->
+        <div class="post-card">
+          <img
+            src="./images/listings/house_for_rent2.jpg"
+            alt="property image"
+            class="card-img"
+          />
+          <div class="card-body">
+            <h3>3 Bed Villa</h3>
+            <div class="card-details">
+              <p class="detail-item">
+                <i class="fas fa-map-marker-alt"></i> Sarbet
+              </p>
+              <p class="detail-item">
+                <i class="fas fa-money-bill-wave"></i> 45,000 ETB
+              </p>
+              <p class="detail-item status status-avail">
+                <i class="fas fa-info-circle"></i> Available
+              </p>
+              <button class="btn btn-edit">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="post-card">
+          <img
+            src="./images/listings/house_for_rent3.jpg"
+            alt="property image"
+            class="card-img"
+          />
+          <div class="card-body">
+            <h3>Single Room</h3>
+            <div class="card-details">
+              <p class="detail-item">
+                <i class="fas fa-map-marker-alt"></i> Megenagna
+              </p>
+              <p class="detail-item">
+                <i class="fas fa-money-bill-wave"></i> 6,000 ETB
+              </p>
+              <p class="detail-item status status-rented">
+                <i class="fas fa-info-circle"></i> Rented
+              </p>
+              <button class="btn btn-edit">
+                <i class="fas fa-edit"></i> Manage
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-home"></i> HomeLink Rentals</h3>
+          <p>© 2025 HomeLink Rentals. All rights reserved</p>
+
+          <div class="anchors">
+            <p>
+              <strong><a href="about.html">About Us</a></strong>
+            </p>
+            <p>
+              <strong><a href="contact.html">Contact Us</a></strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
