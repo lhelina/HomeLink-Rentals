@@ -46,11 +46,15 @@
 
       <nav class="sidebar" id="sidebarMenu">
         <!-- slide-out menu -->
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="dashboard-owner.html"
+          ><i class="fas fa-plus-circle"></i>Post home
+        </a>
         <a href="listing.html"><i class="fas fa-list"></i> Listing</a>
         <a href="dashboard-renter.html"
           ><i class="fas fa-sign-in-alt"></i> Login</a
         >
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
       </nav>
 
       <div id="loginModal" class="modal">
@@ -235,7 +239,16 @@
       const sidebar = document.getElementById("sidebarMenu");
 
       menuBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("open"); // toggle sidebar
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (e) => {
+        const clickedOutside =
+          !sidebar.contains(e.target) && !menuBtn.contains(e.target);
+
+        if (clickedOutside) {
+          sidebar.classList.remove("open");
+        }
       });
     </script>
   </body>
