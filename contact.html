@@ -34,6 +34,7 @@
         <a href="dashboard-renter.html"
           ><i class="fas fa-sign-in-alt"></i> Login</a
         >
+        <a href="about.html">About us</a>
         <a href="dashboard-owner.html" class="posthome-btn"
           ><i class="fas fa-plus-circle"></i> Post home</a
         >
@@ -106,9 +107,27 @@
     </footer>
 
     <script>
+      const sidebar = document.getElementById("sidebarMenu");
+      const menuIcon = document.querySelector(".menu-icon");
+
       function toggleMenu() {
-        document.getElementById("sidebarMenu").classList.toggle("open");
+        sidebar.classList.toggle("open");
       }
+
+      document.addEventListener("click", function (event) {
+        const clickedInsideSidebar = sidebar.contains(event.target);
+        const clickedMenuIcon = menuIcon.contains(event.target);
+
+        if (
+          sidebar.classList.contains("open") &&
+          !clickedInsideSidebar &&
+          !clickedMenuIcon
+        ) {
+          sidebar.classList.remove("open");
+        }
+      });
     </script>
   </body>
 </html>
+
+
