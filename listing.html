@@ -45,7 +45,9 @@
       <a href="dashboard-renter.html"
         ><i class="fas fa-sign-in-alt"></i> Login</a
       >
-      <button><i class="fas fa-plus-circle"></i> Post home</button>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Contact us</a>
+      <a><i class="fas fa-plus-circle"></i> Post home</a>
     </nav>
 
     <!-- login/register modal -->
@@ -345,6 +347,16 @@
       menuBtn.addEventListener("click", () => {
         sidebar.classList.toggle("open");
       });
+
+      document.addEventListener("click", (e) => {
+        const clickedOutside =
+          !sidebar.contains(e.target) && !menuBtn.contains(e.target);
+
+        if (clickedOutside) {
+          sidebar.classList.remove("open");
+        }
+      });
     </script>
   </body>
 </html>
+
