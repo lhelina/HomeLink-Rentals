@@ -37,6 +37,24 @@
         </button>
       </div>
     </div>
+      <button class="menu-btn" id="menuBtn">☰</button>
+</nav>
+
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeBtn">×</button>
+
+  <a href="index.html"><i class="fas fa-home"></i>Home</a>
+  <a href="listing.html"><i class="fas fa-list"></i> Listings</a>
+ <a href="dashboard-owner.html"
+          ><i class="fas fa-plus-circle"></i> Post Home</a
+        >
+  <a href="index.html">Logout</a>
+  <a href="about.html">About us</a>
+  <a href="contact.html">Contact us</a>
+</div>
+<div id="overlay"></div>
 
     <main class="dashboard-content">
       <h1>My Dashboard</h1>
@@ -177,6 +195,28 @@
             window.location.href = "index.html";
           }
         });
+        
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const closeBtn = document.getElementById("closeBtn");
+  const overlay = document.getElementById("overlay");
+
+  menuBtn.onclick = () => {
+    sidebar.style.right = "0";
+    overlay.style.display = "block";
+  };
+
+  closeBtn.onclick = () => {
+    sidebar.style.right = "-260px";
+    overlay.style.display = "none";
+  };
+
+  overlay.onclick = () => {
+    sidebar.style.right = "-260px";
+    overlay.style.display = "none";
+  };
+
+
     </script>
   </body>
 </html>
