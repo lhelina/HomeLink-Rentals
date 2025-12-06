@@ -140,7 +140,7 @@ html {
   right: -260px;
   width: 260px;
   height: 100%;
-  background: #4c7999;
+   background: #1f2b3a;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -466,3 +466,4 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
